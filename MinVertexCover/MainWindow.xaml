@@ -1,0 +1,57 @@
+﻿<Window x:Class="MinVertexCover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MinVertexCover"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Open" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Save" CanExecute="CommonCommandBinding_CanExecute" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Command="New" Content="Добавить вершину" Width="118" Click="Edge" />
+                <Button Command="Open" Content="Грань" Width="40" Click="Vertex" />
+                <Button Command="Save" Content="Решение" Click="Button_Click" />
+                <Button Command="Save" Content="Очистить" Click="Clean" />
+                <Button Command="Save" Content="Загрузить" Click="Upload" />
+                <Button Command="Save" Content="Сохранить" Click="Button_Click_1" />
+                <Button Command="Save" Content="Справка" Click="Button_Click_2"  />
+            </ToolBar>
+            <ToolBar Margin="359,0,-357,0">
+                
+            </ToolBar>
+        </ToolBarTray>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="201*"/>
+                <RowDefinition Height="206*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="393*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="398*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Canvas x:Name="CanvasPoints" MouseDown="Canvas_MouseDown" Background="#FFD6D6D6" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Margin="-4,-5,-1,-1" Grid.ColumnSpan="5" Grid.RowSpan="4">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0.38"/>
+                        <RotateTransform Angle="-0.423"/>
+                        <TranslateTransform Y="2.651"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+            </Canvas>
+        </Grid>
+    </DockPanel>
+
+</Window>
